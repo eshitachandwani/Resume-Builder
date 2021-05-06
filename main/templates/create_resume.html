@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>Resume-Maker</title>
+
+    <link href="{% static './style.css' %}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- partial:index.partial.html -->
+
+    <div id="javascript_header">
+
+    </div>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <ul class="messages">
+
+            {% for message in messages %}
+
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %} style="color:red;">{{ message }}</li>
+
+                {% endfor %}
+
+        </ul>
+
+        <div class="form__header">
+
+            <h1>
+
+                Build Your Resume
+
+            </h1>
+
+            <p>
+
+                Enter the fields below to generate a resume file.
+
+            </p>
+
+        </div>
+
+        <h2>
+
+            Personal Details
+
+        </h2>
+
+        <div class="form-group">
+
+            <label for="name">
+
+ Full Name
+
+ <span>
+
+ *
+
+ </span>
+
+ </label>
+
+            <input id="name" name="name" value="{{resume_info.full_name}}" type="text" />
+
+            <div class="error" id="name__error">
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="address">
+
+ Address
+
+ </label>
+
+            <input id="address" name="address" value="{{resume_info.address}}" type="text" />
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="phone">
+
+ Phone
+
+ </label>
+
+            <input id="phone" name="phone" value="{{resume_info.phone}}" type="text" />
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="email">
+
+ Email
+
+ <span>
+
+ *
+
+ </span>
+
+ </label>
+
+            <input id="email" name="email" value="{{resume_info.email}}" type="email" />
+
+            <div class="error" id="email__error">
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="about">
+
+ About You
+
+ </label>
+
+            <textarea id="about" name="about" placeholder="{{resume_info.about_you}}"></textarea>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="career">

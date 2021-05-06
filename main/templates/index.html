@@ -1,0 +1,51 @@
+ {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Resume Builder</title>
+
+</head>
+
+<body>
+    <style>
+        .hello-msg {
+            font: bold;
+            font-size: 18px;
+            color: blueviolet;
+            margin-right: 20px;
+        }
+    </style>
+    <span class="hello-msg">Hello, {{request.user}}</span>
+    <div id="javascript_header">
+
+    </div>
+
+    <form>
+        <div class="form__header">
+            <h1>Build Your Resume</h1>
+            <p> Dashboard </p>
+        </div>
+        <div class="line-break"></div>
+
+        <a class="button" href="create-resume"> Create/Edit Resume</a>
+
+        <div class="line-break">
+
+        </div>
+
+        <a class="button" href="resume"> View Resume</a>
+
+        <div class="line-break">
+
+        </div>
+        <span> <a  class="hello-msg" href="{% url 'logout' %}">Logout </a></span>
+    </form>
+
+
+
+</body>
+
+</html>
