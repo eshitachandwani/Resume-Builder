@@ -5,6 +5,8 @@ from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .models import Profile
+from django.contrib.auth.models import User
 
 def register(request):
     if request.user.is_authenticated:
@@ -16,7 +18,8 @@ def register(request):
             if form.is_valid():
                 form.save()
                 username = form.cleaned_data.get('username')
-                messages.success(request, 'Account was created for ' + username)
+                messages.success(
+                    request, 'Account was created for ' + username)
                 return redirect('login')
 
     context = {'form': form}
@@ -24,7 +27,7 @@ def register(request):
 
 
 def loginPage(request):
-    
+
     if request.user.is_authenticated:
         return redirect('resume')
     else:
@@ -37,7 +40,7 @@ def loginPage(request):
                 login(request, user)
                 return redirect('resume')
             else:
-                messages.info(request,'Username Or password is incorrect')
+                messages.info(request, 'Username Or password is incorrect')
 
     context = {}
     return render(request, 'Login.html', context)
@@ -50,10 +53,36 @@ def logoutUser(request):
 
 @login_required(login_url='login')
 def resume(request):
-    context = {}
+
+    resumes=request.user.profile_set.all().filter()
+    context = {'resumes':resumes}
     return render(request, 'index.html', context)
 
+
 @login_required(login_url='login')
-def create_resume(request):
+def create_resume_1(request):
+    if request.method == "POST":
+        profile_name=request.POST.get("profile_name")
+        firstname = request.POST.get("firstname")
+        lastname = request.POST.get("lastname")
+        phone = request.POST.get("phone")
+        email = request.POST.get("email")
+        address = request.POST.get("address")
+        city = request.POST.get("city")
+        code = request.POST.get("code")
+        other_info = request.POST.get("other_info")
+        user=request.user
+
+        profile = Profile(profile_name=profile_name,firstname=firstname, lastname=lastname, phone=phone,
+                           email=email, address=address, city=city, code=code, other_info=other_info, user=user)
+        profile.save()
+        return redirect('create_resume_2')
+        
     context = {}
-    return render(request, 'create_resume.html', context)
+    return render(request, 'create_resume_1.html', context)
+
+
+@login_required(login_url='login')
+def create_resume_2(request):
+    context = {}
+    return render(request, 'create_resume_2.html', context)

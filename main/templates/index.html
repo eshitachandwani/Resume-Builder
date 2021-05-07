@@ -27,10 +27,17 @@
         <div class="form__header">
             <h1>Build Your Resume</h1>
             <p> Dashboard </p>
+            {% for r in resumes %}
+            <tr>
+                <td>{{r.profile_name}}</td>
+                <br>
+            </tr>
+            {% endfor %}
         </div>
+
         <div class="line-break"></div>
 
-        <a class="button" <a href="{% url 'create_resume' %}">> Create/Edit Resume</a>
+        <a class="button" <a href="{% url 'create_resume_1' %}">> Create/Edit Resume</a>
 
         <div class="line-break">
 

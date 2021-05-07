@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Availability Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
+</head>
+</head>
+
+<body>
+
+    <div class="testbox">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <h2>Personal Details</h2>
+            <div class="item ">
+                <label for="profile_name">Profile Name<span>*</span></label>
+                <input id="profile_name " type="profile_name " name="profile_name" />
+            </div>
+            <div class="item ">
+                <label for="name ">Name<span>*</span></label>
+                <div class="name-item ">
+                    <input id="name " type="text " name="firstname" placeholder="First " />
+                    <input type="text " name="lastname" placeholder="Last " />
+                </div>
+            </div>
+            <div class="item ">
+                <label for="email ">Email<span>*</span></label>
+                <input id="email " type="email " name="email" />
+            </div>
+            <div class="item ">
+                <label for="phone_number ">Phone Number<span>*</span></label>
+                <input id="phone " name="phone" />
+            </div>
+            <div class="item ">
+                <label for="address">Address</label>
+                <input id="address" type="text " name="address" />
+            </div>
+
+            <div class="item ">
+                <div class="name-item ">
+                    <div>
+                        <label for="city">City/Town</label>
+                        <input id="city" type="text " name="city" />
+                    </div>
+                    <div>
+                        <label for="code">Zip-Code</label>
+                        <input id="code" type="text " name="code" />
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <label for="comment ">Any Other Information</label>
+                <textarea id="other_info" name="other_info" rows="3 "></textarea>
+            </div>
+            <div class="btn-block">
+                <button type="submit">Next</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

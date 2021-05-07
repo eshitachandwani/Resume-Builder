@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Availability Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
+</head>
+
+<body>
+
+    <div class="testbox">
+        <form action="/">
+            <h2>Experiences</h2>
+            <div class="item">
+                <label for="name">Name<span>*</span></label>
+                <div class="name-item">
+                    <input id="name" type="text" name="firstname" placeholder="First" />
+                    <input type="text" name="lastname" placeholder="Last" />
+                </div>
+            </div>
+            <div class="item">
+                <label for="email">Email<span>*</span></label>
+                <input id="email" type="email" name="email" />
+            </div>
+            <div class="item">
+                <label for="phone_number">Phone Number<span>*</span></label>
+                <input id="phone_number" name="name" />
+            </div>
+            <div class="item">
+                <label for="sunday">Address</label>
+                <input id="sunday" type="text" name="Address" />
+            </div>
+
+            <div class="item">
+                <div class="name-item">
+                    <div>
+                        <label for="city">City/Town</label>
+                        <input id="city" type="text" name="city" />
+                    </div>
+                    <div>
+                        <label for="zipcode">Zip-Code</label>
+                        <input id="zipcode" type="text" name="zipcode" />
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <label for="comment">Any Other Information</label>
+                <textarea id="comment" rows="3"></textarea>
+            </div>
+            <div class="btn-block">
+                <button type="submit" href="/">next</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
