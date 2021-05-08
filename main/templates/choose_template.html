@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Resume Builder</title>
+
+</head>
+
+<body>
+    <h3>Choose template</h3>
+
+    <div class="field">
+        <td>Template 1</td>
+        <a class="button" href="{% url 'view_template1' id %}">Print</a>
+    </div>
+    <br>
+    <div class="field">
+        <td>Template 2</td>
+        <a class="button" href="">Print</a>
+    </div>
+
+</body>
+
+</html>

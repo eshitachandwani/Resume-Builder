@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Template 1</title>
+    <meta name="author" content="Jake Rocheleau">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Simonetta:400,900|Balthazar">
+    <link rel="stylesheet" type="text/css" href="{%  static  'css/template1.css'  %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script src="{%  static  '/js/pdf.js'  %}"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            display: grid;
+            place-items: center;
+            background: #f2f2f2;
+            /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="w" itemscope itemtype="http://schema.org/Person">
+        <header class="clearfix">
+            <div id="info">
+                <h1><span itemprop="name">{{resume.firstname}} {{resume.lastname}}</span></h1>
+                <small itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				  <span itemprop="addressLocality">{{resume.address}}</span>, 
+				  <span itemprop="addressRegion">{{resume.city}}</span>, 
+                  <span itemprop="code">Pin-{{resume.code}}</span>, 
+				  <span itemprop="addressCountry">India</span>
+				</small>
+                <small><span itemprop="email">{{resume.email}}</span></small>
+                <small><a href="" itemprop="url">My Portfolio</a> &bull; <a href="" itemprop="url">@jakerocheleau</a></small>
+            </div>
+        </header>
+        <section id="skills" class="clearfix" itemscope itemtype="http://schema.org/ItemList">
+            <h2 itemprop="name">Skillset</h2>
+            <section id="skills-left">
+                <h4 itemprop="about">Development</h4>
+                <ul>
+                    <li itemprop="itemListElement">HTML5/CSS3</li>
+                    <li itemprop="itemListElement">JavaScript &amp; jQuery</li>
+                    <li itemprop="itemListElement">PHP Backend</li>
+                    <li itemprop="itemListElement">SQL Databases</li>
+                    <li itemprop="itemListElement">Wordpress</li>
+                    <li itemprop="itemListElement">Pligg CMS</li>
+                    <li itemprop="itemListElement">Some Objective-C</li>
+                </ul>
+            </section>
+
+            <section id="skills-right">
+                <h4 itemprop="about">Software</h4>
+                <ul>
+                    <li itemprop="itemListElement">Adobe Photoshop</li>
+                    <li itemprop="itemListElement">Adobe Dreamweaver</li>
+                    <li itemprop="itemListElement">MS Office 2007-2010</li>
+                    <li itemprop="itemListElement">cPanel &amp; phpMyAdmin</li>
+                    <li itemprop="itemListElement">Xcode 4</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="education">
+            <h2>Past Education</h2>
+            <p><span itemprop="alumniOf">Hudson High School</span> graduate of 2009.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <p>Freelance Web Designer/Developer ~ 2007-2009</p>
+            <p>Best Buy - Geek Squad In-Store Agent ~ 2008-2009</p>
+            <p>Freelance Writer for <span itemprop="worksFor">Hongkiat.com</span> ~ 2011-Present</p>
+        </section>
+
+        <section id="articles">
+            <h2>Recent Articles</h2>
+            <p itemscope itemtype="http://schema.org/Article">
+                <span itemprop="name">
+			<a href="http://www.hongkiat.com/blog/css-javascript-fallback-methods/" itemprop="url" title="10 Useful Fallback Methods For CSS And Javascript">10 Useful Fallback Methods For CSS And Javascript</a></span> &bull; Published in
+                <span itemprop="datePublished">July 2012</span>
+            </p>
+
+            <p itemscope itemtype="http://schema.org/Article">
+                <span itemprop="name">
+			<a href="http://www.hongkiat.com/blog/wordpress-url-rewrite/" itemprop="url" title="Rewriting URLs In WordPress: Tips And Plugins">Rewriting URLs In WordPress: Tips And Plugins</a></span> &bull; Published in <span itemprop="datePublished">July 2012</span></p>
+
+            <p itemscope itemtype="http://schema.org/Article">
+                <span itemprop="name">
+			<a href="http://www.hongkiat.com/blog/jpeg-optimization-guide/" itemprop="url" title="JPEG Optimization For The Web – Ultimate Guide">JPEG Optimization For The Web – Ultimate Guide</a></span> &bull; Published in <span itemprop="datePublished">July 2012</span></p>
+
+            <p itemscope itemtype="http://schema.org/Article">
+                <span itemprop="name">
+			<a href="http://www.hongkiat.com/blog/design-perfect-newsletter/" itemprop="url" title="9 Tricks To Design The Perfect HTML Newsletter">9 Tricks To Design The Perfect HTML Newsletter</a></span> &bull; Published in <span itemprop="datePublished">May 2012</span></p>
+
+            <p itemscope itemtype="http://schema.org/Article">
+                <span itemprop="name">
+			<a href="http://www.hongkiat.com/blog/google-website-optimizer-ab-testing-guide/" itemprop="url" title="Guide To A/B Testing With Google Website Optimizer">Guide To A/B Testing With Google Website Optimizer</a></span> &bull; Published
+                in <span itemprop="datePublished">March 2012</span></p>
+        </section>
+
+    </div>
+</body>
+<button class="btn btn-primary" id="download">download pdf</button>
+
+</html>

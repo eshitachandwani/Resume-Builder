@@ -3,11 +3,12 @@
 <html>
 
 <head>
-    <title>Employee Availability Form</title>
+    <title>Make Resume</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
-</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -18,46 +19,207 @@
             <h2>Personal Details</h2>
             <div class="item ">
                 <label for="profile_name">Profile Name<span>*</span></label>
-                <input id="profile_name " type="profile_name " name="profile_name" />
+                <input id="profile_name " type="profile_name " name="profile_name" value="{{profile.profile_name}}" />
             </div>
             <div class="item ">
                 <label for="name ">Name<span>*</span></label>
                 <div class="name-item ">
-                    <input id="name " type="text " name="firstname" placeholder="First " />
-                    <input type="text " name="lastname" placeholder="Last " />
+                    <input id="name " type="text " name="firstname" placeholder="First " value="{{profile.firstname}}" />
+                    <input type="text " name="lastname" placeholder="Last " value="{{profile.lastname}}" />
                 </div>
             </div>
             <div class="item ">
                 <label for="email ">Email<span>*</span></label>
-                <input id="email " type="email " name="email" />
+                <input id="email " type="email " name="email" value="{{profile.email}}" />
             </div>
             <div class="item ">
                 <label for="phone_number ">Phone Number<span>*</span></label>
-                <input id="phone " name="phone" />
+                <input id="phone " name="phone" value="{{profile.phone}}" />
             </div>
             <div class="item ">
-                <label for="address">Address</label>
-                <input id="address" type="text " name="address" />
+                <label for="address">Local Address</label>
+                <input id="address" type="text " name="address" value="{{profile.address}}" />
             </div>
 
             <div class="item ">
                 <div class="name-item ">
                     <div>
                         <label for="city">City/Town</label>
-                        <input id="city" type="text " name="city" />
+                        <input id="city" type="text " name="city" value="{{profile.city}}" />
                     </div>
                     <div>
                         <label for="code">Zip-Code</label>
-                        <input id="code" type="text " name="code" />
+                        <input id="code" type="text " name="code" value="{{profile.code}}" />
+                    </div>
+                    <div>
+                        <label for="country">Country</label>
+                        <input id="country" type="text " name="country" />
                     </div>
                 </div>
             </div>
             <div class="item ">
-                <label for="comment ">Any Other Information</label>
-                <textarea id="other_info" name="other_info" rows="3 "></textarea>
+                <label for="portfolio">Portfolio Link</label>
+                <input id="portfolio" type="text " name="portfolio" />
             </div>
-            <div class="btn-block">
-                <button type="submit">Next</button>
+            <div class="item ">
+                <label for="LinkedIn">LinkedIn Link</label>
+                <input id="LinkedIn" type="text " name="LinkedIn" />
+            </div>
+            <div class="item ">
+                <label for="degree">College/Degree</label>
+                <input id="degree" type="text " name="degree" />
+            </div>
+            <div class="item ">
+                <div class="name-item ">
+                    <div>
+                        <label for="start_deg">Start Date</label>
+                        <input id="start_deg" type="text " name="start_deg" placeholder="MM/YR" />
+                    </div>
+                    <div>
+                        <label for="end_deg">End Date</label>
+                        <input id="end_deg" type="text " name="end_deg" placeholder="MM/YR" />
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <label for="education">Education</label>
+                <input id="education" type="text " name="education" />
+            </div>
+            <div class="item ">
+                <div class="name-item ">
+                    <div>
+                        <label for="start_edu">Start Date</label>
+                        <input id="start_edu" type="text " name="start_edu" placeholder="MM/YR" />
+                    </div>
+                    <div>
+                        <label for="end_edu">End Date</label>
+                        <input id="end_edu" type="text " name="end_edu" placeholder="MM/YR" />
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <label for="exp1">Experience 1</label>
+                <input id="exp1" type="text " name="exp1" />
+            </div>
+            <div class="item ">
+                <div class="name-item ">
+                    <div>
+                        <label for="start_exp1">Start Date</label>
+                        <input id="start_exp1" type="text " name="start_exp1" placeholder="MM/YR" />
+                    </div>
+                    <div>
+                        <label for="end_exp1">End Date</label>
+                        <input id="end_exp1" type="text " name="end_exp1" placeholder="MM/YR Or Currently Working" />
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <label for="exp2">Experience 2</label>
+                <input id="exp2" type="text " name="exp2" />
+            </div>
+            <div class="item ">
+                <div class="name-item ">
+                    <div>
+                        <label for="start_exp2">Start Date</label>
+                        <input id="start_exp2" type="text " name="start_exp2" placeholder="MM/YR" />
+                    </div>
+                    <div>
+                        <label for="end_exp2">End Date</label>
+                        <input id="end_exp2" type="text " name="end_exp2" placeholder="MM/YR Or Currently Working" />
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <label for="exp3">Experience 3</label>
+                <input id="exp3" type="text " name="exp3" />
+            </div>
+            <div class="item ">
+                <div class="name-item ">
+                    <div>
+                        <label for="start_exp3">Start Date</label>
+                        <input id="start_exp3" type="text " name="start_exp3" placeholder="MM/YR" />
+                    </div>
+                    <div>
+                        <label for="end_exp3">End Date</label>
+                        <input id="end_exp3" type="text " name="end_exp3" placeholder="MM/YR Or Currently Working" />
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <label for="pj1">Project 1</label>
+                <input id="pj1" type="text " name="pj1" />
+            </div>
+            <div class="item ">
+                <div class="name-item ">
+                    <div>
+                        <label for="start_pj1">Start Date</label>
+                        <input id="start_pj1" type="text " name="start_pj1" placeholder="MM/YR" />
+                    </div>
+                    <div>
+                        <label for="end_pj1">End Date</label>
+                        <input id="end_pj1" type="text " name="end_pj1" placeholder="MM/YR Or Currently Working" />
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <label for="pj2">Project 2</label>
+                <input id="pj2" type="text " name="pj2" />
+            </div>
+            <div class="item ">
+                <div class="name-item ">
+                    <div>
+                        <label for="start_pj2">Start Date</label>
+                        <input id="start_pj2" type="text " name="start_pj2" placeholder="MM/YR" />
+                    </div>
+                    <div>
+                        <label for="end_pj2">End Date</label>
+                        <input id="end_pj2" type="text " name="end_pj2" placeholder="MM/YR Or Currently Working" />
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <label for="pj3">Project 3</label>
+                <input id="pj3" type="text " name="pj3" />
+            </div>
+            <div class="item ">
+                <div class="name-item ">
+                    <div>
+                        <label for="start_pj3">Start Date</label>
+                        <input id="start_pj3" type="text " name="start_pj3" placeholder="MM/YR" />
+                    </div>
+                    <div>
+                        <label for="end_pj3">End Date</label>
+                        <input id="end_pj3" type="text " name="end_pj3" placeholder="MM/YR Or Currently Working" />
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <label for="comment ">Achievments</label>
+                <textarea id="Achievments" name="Achievments" rows=3></textarea>
+            </div>
+            <div class="item ">
+                <label for="comment ">Skills</label>
+                <textarea id="Skills" name="Skills" rows=3></textarea>
+            </div>
+            <div class="item ">
+                <label for="comment ">Position of Responsibility</label>
+                <textarea id="por" name="por" rows=3></textarea>
+            </div>
+            <div class="item ">
+                <label for="comment ">Hobbies</label>
+                <textarea id="Hobbies" name="Hobbies" rows=3></textarea>
+            </div>
+            <div class="item ">
+                <label for="comment ">Any Other Information</label>
+                <textarea id="other_info" name="other_info" rows=3>{{profile.other_info}}</textarea>
+            </div>
+
+            {% if messages %} {% for message in messages %}
+            <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>
+
+            {% endfor %} {% endif %}
+            <div class="btn-block ">
+                <button type="submit ">SUBMIT</button>
             </div>
         </form>
     </div>

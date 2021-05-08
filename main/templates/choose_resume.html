@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Resume Builder</title>
+
+</head>
+
+<body>
+    <style>
+        .hello-msg {
+            font: bold;
+            font-size: 18px;
+            color: blueviolet;
+            margin-right: 20px;
+        }
+    </style>
+    <h3>Choose Resume</h3>
+    <form>
+        {% for r in resumes %}
+        <tr>
+
+
+            <div class="field">
+                <td>{{r.profile_name}}</td>
+                <a class="button" href="{% url 'choose_template' r.id %}">Choose</a>
+            </div>
+
+            <br>
+        </tr>
+        {% endfor %}
+    </form>
+
+
+
+</body>
+
+</html>
