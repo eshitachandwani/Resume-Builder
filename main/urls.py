@@ -7,7 +7,7 @@ urlpatterns = [
     path('login/', views.loginPage, name='login'),
     path('', views.resume, name='resume'),
     path('logout/', views.logoutUser, name='logout'),
-    path("create-resume/", views.create_resume_1, name="create_resume_1"),
+    path("create-resume/", views.create_resume, name="create_resume"),
     path("create-resume/<str:pk>/",
          views.update_resume, name="update_resume"),
 
@@ -18,5 +18,4 @@ urlpatterns = [
          views.choose_template, name="choose_template"),
 
     path("view_template1/<str:pk>/", views.view_template1, name="view_template1"),
-    path("print_template1/<str:pk>/", views.print_template1, name="print_template1")
 ]

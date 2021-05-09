@@ -5,7 +5,7 @@ from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Profile
+from .models import Info
 from django.contrib.auth.models import User
 from django.template import loader
 
@@ -56,64 +56,159 @@ def logoutUser(request):
 @login_required(login_url='login')
 def resume(request):
 
-    resumes = request.user.profile_set.all().filter()
+    resumes = request.user.info_set.all().filter()
     # resumes = reversed(list(resumes))
     context = {'resumes': resumes}
     return render(request, 'resume.html', context)
 
 
 @login_required(login_url='login')
-def create_resume_1(request):
+def create_resume(request):
     if request.method == "POST":
         profile_name = request.POST.get("profile_name")
         firstname = request.POST.get("firstname")
         lastname = request.POST.get("lastname")
         phone = request.POST.get("phone")
         email = request.POST.get("email")
-        address = request.POST.get("address")
-        city = request.POST.get("city")
-        code = request.POST.get("code")
-        other_info = request.POST.get("other_info")
+
+        dep = request.POST.get("dep")
+        roll = request.POST.get("roll")
+        github = request.POST.get("github")
+        linkedin = request.POST.get("linkedin")
+        portfolio = request.POST.get("portfolio")
+
+        clg = request.POST.get("clg")
+        clg_cg = request.POST.get("clg_cg")
+        start_clg = request.POST.get("start_clg")
+        end_clg = request.POST.get("end_clg")
+
+        edu = request.POST.get("edu")
+        edu_cg = request.POST.get("edu_cg")
+        start_edu = request.POST.get("start_edu")
+        end_edu = request.POST.get("end_edu")
+
+        exp1 = request.POST.get("exp1")
+        start_exp1 = request.POST.get("start_exp1")
+        end_exp1 = request.POST.get("end_exp1")
+
+        exp2 = request.POST.get("exp2")
+        start_exp2 = request.POST.get("start_exp2")
+        end_exp2 = request.POST.get("end_exp2")
+
+        exp3 = request.POST.get("exp3")
+        start_exp3 = request.POST.get("start_exp3")
+        end_exp3 = request.POST.get("end_exp3")
+
+        pj1 = request.POST.get("pj1")
+        start_pg1 = request.POST.get("start_pg1")
+        end_pg1 = request.POST.get("end_pg1")
+
+        pj2 = request.POST.get("pj2")
+        start_pg2 = request.POST.get("start_pg2")
+        end_pg2 = request.POST.get("end_pg2")
+
+        pj3 = request.POST.get("pj3")
+        start_pg3 = request.POST.get("start_pg3")
+        end_pg3 = request.POST.get("end_pg3")
+
+        Achievments = request.POST.get("Achievments")
+        Skills = request.POST.get("Skills")
+        Por = request.POST.get("Por")
+        Hobbies = request.POST.get("Hobbies")
+
         user = request.user
 
         if profile_name != "" and firstname != "" and phone != "" and email != "":
-            profile = Profile(profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
-                              email=email, address=address, city=city, code=code, other_info=other_info, user=user)
+            profile = Info(user=user, profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
+                           email=email, dep=dep, roll=roll, github=github, linkedin=linkedin, portfolio=portfolio,
+                           clg=clg, clg_cg=clg_cg, start_clg=start_clg, end_clg=end_clg, edu=edu, edu_cg=edu_cg, start_edu=start_edu,
+                           end_edu=end_edu, exp1=exp1, start_exp1=start_exp1, end_exp1=end_exp1, exp2=exp2, start_exp2=start_exp2,
+                           end_exp2=end_exp2, exp3=exp3, start_exp3=start_exp3, end_exp3=end_exp3, pj1=pj1,
+                           start_pg1=start_pg1, end_pg1=end_pg1, pj2=pj2, start_pg2=start_pg2, end_pg2=end_pg2, pj3=pj3,
+                           start_pg3=start_pg3, end_pg3=end_pg3, Achievments=Achievments, Skills=Skills, Por=Por, Hobbies=Hobbies)
             profile.save()
             return redirect('resume')
         else:
             messages.info(request, 'Enter all the Important Details')
 
     context = {}
-    return render(request, 'create_resume_1.html', context)
+    return render(request, 'create_resume.html', context)
 
 
 @login_required(login_url='login')
 def update_resume(request, pk):
-    profile = Profile.objects.get(id=pk)
+    profile = Info.objects.get(id=pk)
     if request.method == "POST":
         profile_name = request.POST.get("profile_name")
         firstname = request.POST.get("firstname")
         lastname = request.POST.get("lastname")
         phone = request.POST.get("phone")
         email = request.POST.get("email")
-        address = request.POST.get("address")
-        city = request.POST.get("city")
-        code = request.POST.get("code")
-        other_info = request.POST.get("other_info")
+
+        dep = request.POST.get("dep")
+        roll = request.POST.get("roll")
+        github = request.POST.get("github")
+        linkedin = request.POST.get("linkedin")
+        portfolio = request.POST.get("portfolio")
+
+        clg = request.POST.get("clg")
+        clg_cg = request.POST.get("clg_cg")
+        start_clg = request.POST.get("start_clg")
+        end_clg = request.POST.get("end_clg")
+
+        edu = request.POST.get("edu")
+        edu_cg = request.POST.get("edu_cg")
+        start_edu = request.POST.get("start_edu")
+        end_edu = request.POST.get("end_edu")
+
+        exp1 = request.POST.get("exp1")
+        start_exp1 = request.POST.get("start_exp1")
+        end_exp1 = request.POST.get("end_exp1")
+
+        exp2 = request.POST.get("exp2")
+        start_exp2 = request.POST.get("start_exp2")
+        end_exp2 = request.POST.get("end_exp2")
+
+        exp3 = request.POST.get("exp3")
+        start_exp3 = request.POST.get("start_exp3")
+        end_exp3 = request.POST.get("end_exp3")
+
+        pj1 = request.POST.get("pj1")
+        start_pg1 = request.POST.get("start_pg1")
+        end_pg1 = request.POST.get("end_pg1")
+
+        pj2 = request.POST.get("pj2")
+        start_pg2 = request.POST.get("start_pg2")
+        end_pg2 = request.POST.get("end_pg2")
+
+        pj3 = request.POST.get("pj3")
+        start_pg3 = request.POST.get("start_pg3")
+        end_pg3 = request.POST.get("end_pg3")
+
+        Achievments = request.POST.get("Achievments")
+        Skills = request.POST.get("Skills")
+        Por = request.POST.get("Por")
+        Hobbies = request.POST.get("Hobbies")
+
         user = request.user
-        new = Profile(id=pk, profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
-                      email=email, address=address, city=city, code=code, other_info=other_info, user=user)
+
+        new = Info(id=pk,user=user, profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
+                   email=email, dep=dep, roll=roll, github=github, linkedin=linkedin, portfolio=portfolio,
+                   clg=clg, clg_cg=clg_cg, start_clg=start_clg, end_clg=end_clg, edu=edu, edu_cg=edu_cg, start_edu=start_edu,
+                   end_edu=end_edu, exp1=exp1, start_exp1=start_exp1, end_exp1=end_exp1, exp2=exp2, start_exp2=start_exp2,
+                   end_exp2=end_exp2, exp3=exp3, start_exp3=start_exp3, end_exp3=end_exp3, pj1=pj1,
+                   start_pg1=start_pg1, end_pg1=end_pg1, pj2=pj2, start_pg2=start_pg2, end_pg2=end_pg2, pj3=pj3,
+                   start_pg3=start_pg3, end_pg3=end_pg3, Achievments=Achievments, Skills=Skills, Por=Por, Hobbies=Hobbies)
         new.save()
         return redirect('resume')
 
     context = {'profile': profile}
-    return render(request, 'create_resume_1.html', context)
+    return render(request, 'create_resume.html', context)
 
 
 @login_required(login_url='login')
 def delete_resume(request, pk):
-    resume = Profile.objects.get(id=pk)
+    resume = Info.objects.get(id=pk)
     if request.method == "POST":
         resume.delete()
         return redirect('resume')
@@ -124,7 +219,7 @@ def delete_resume(request, pk):
 
 @login_required(login_url='login')
 def choose_resume(request):
-    resumes = request.user.profile_set.all()
+    resumes = request.user.info_set.all()
     context = {'resumes': resumes}
     return render(request, 'choose_resume.html', context)
 
@@ -137,22 +232,6 @@ def choose_template(request, pk):
 
 @login_required(login_url='login')
 def view_template1(request, pk):
-    resume = Profile.objects.get(id=pk)
+    resume = Info.objects.get(id=pk)
     context = {"resume": resume}
     return render(request, 'template1.html', context)
-
-
-@login_required(login_url='login')
-def print_template1(request, pk):
-    resume = Profile.objects.get(id=pk)
-    template = loader.get_template('template1.html')
-    html = template.render({'resume': resume})
-
-    options = {
-        'encoding': 'UTF-8'
-    }
-
-    pdf = pdfkit.from_string(html, False, options)
-    response = HttpResponse(pdf, content_type='application/pdf')
-    response['Content-Disposition'] = 'attachments'
-    return response
