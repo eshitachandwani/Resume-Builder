@@ -90,26 +90,32 @@ def create_resume(request):
         exp1 = request.POST.get("exp1")
         start_exp1 = request.POST.get("start_exp1")
         end_exp1 = request.POST.get("end_exp1")
+        exp1_info = request.POST.get("exp1_info")
 
         exp2 = request.POST.get("exp2")
         start_exp2 = request.POST.get("start_exp2")
         end_exp2 = request.POST.get("end_exp2")
+        exp2_info = request.POST.get("exp2_info")
 
         exp3 = request.POST.get("exp3")
         start_exp3 = request.POST.get("start_exp3")
         end_exp3 = request.POST.get("end_exp3")
+        exp3_info = request.POST.get("exp3_info")
 
         pj1 = request.POST.get("pj1")
         start_pg1 = request.POST.get("start_pg1")
         end_pg1 = request.POST.get("end_pg1")
+        pg1_info = request.POST.get("pg1_info")
 
         pj2 = request.POST.get("pj2")
         start_pg2 = request.POST.get("start_pg2")
         end_pg2 = request.POST.get("end_pg2")
+        pg2_info = request.POST.get("pg2_info")
 
         pj3 = request.POST.get("pj3")
         start_pg3 = request.POST.get("start_pg3")
         end_pg3 = request.POST.get("end_pg3")
+        pg3_info = request.POST.get("pg3_info")
 
         Achievments = request.POST.get("Achievments")
         Skills = request.POST.get("Skills")
@@ -119,13 +125,14 @@ def create_resume(request):
         user = request.user
 
         if profile_name != "" and firstname != "" and phone != "" and email != "":
-            profile = Info(user=user, profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
-                           email=email, dep=dep, roll=roll, github=github, linkedin=linkedin, portfolio=portfolio,
-                           clg=clg, clg_cg=clg_cg, start_clg=start_clg, end_clg=end_clg, edu=edu, edu_cg=edu_cg, start_edu=start_edu,
-                           end_edu=end_edu, exp1=exp1, start_exp1=start_exp1, end_exp1=end_exp1, exp2=exp2, start_exp2=start_exp2,
-                           end_exp2=end_exp2, exp3=exp3, start_exp3=start_exp3, end_exp3=end_exp3, pj1=pj1,
-                           start_pg1=start_pg1, end_pg1=end_pg1, pj2=pj2, start_pg2=start_pg2, end_pg2=end_pg2, pj3=pj3,
-                           start_pg3=start_pg3, end_pg3=end_pg3, Achievments=Achievments, Skills=Skills, Por=Por, Hobbies=Hobbies)
+            new = Info(id=pk, user=user, profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
+                       email=email, dep=dep, roll=roll, github=github, linkedin=linkedin, portfolio=portfolio,
+                       clg=clg, clg_cg=clg_cg, start_clg=start_clg, end_clg=end_clg, edu=edu, edu_cg=edu_cg, start_edu=start_edu,
+                       end_edu=end_edu, exp1=exp1, start_exp1=start_exp1, end_exp1=end_exp1, exp2=exp2, start_exp2=start_exp2,
+                       end_exp2=end_exp2, exp3=exp3, start_exp3=start_exp3, end_exp3=end_exp3, pj1=pj1,
+                       start_pg1=start_pg1, end_pg1=end_pg1, pj2=pj2, start_pg2=start_pg2, end_pg2=end_pg2, pj3=pj3,
+                       pg3_info=pg3_info, pg2_info=pg2_info, pg1_info=pg1_info, exp1_info=exp1_info, exp2_info=exp2_info, exp3_info=exp3_info,
+                       start_pg3=start_pg3, end_pg3=end_pg3, Achievments=Achievments, Skills=Skills, Por=Por, Hobbies=Hobbies)
             profile.save()
             return redirect('resume')
         else:
@@ -164,26 +171,32 @@ def update_resume(request, pk):
         exp1 = request.POST.get("exp1")
         start_exp1 = request.POST.get("start_exp1")
         end_exp1 = request.POST.get("end_exp1")
+        exp1_info = request.POST.get("exp1_info")
 
         exp2 = request.POST.get("exp2")
         start_exp2 = request.POST.get("start_exp2")
         end_exp2 = request.POST.get("end_exp2")
+        exp2_info = request.POST.get("exp2_info")
 
         exp3 = request.POST.get("exp3")
         start_exp3 = request.POST.get("start_exp3")
         end_exp3 = request.POST.get("end_exp3")
+        exp3_info = request.POST.get("exp3_info")
 
         pj1 = request.POST.get("pj1")
         start_pg1 = request.POST.get("start_pg1")
         end_pg1 = request.POST.get("end_pg1")
+        pg1_info = request.POST.get("pg1_info")
 
         pj2 = request.POST.get("pj2")
         start_pg2 = request.POST.get("start_pg2")
         end_pg2 = request.POST.get("end_pg2")
+        pg2_info = request.POST.get("pg2_info")
 
         pj3 = request.POST.get("pj3")
         start_pg3 = request.POST.get("start_pg3")
         end_pg3 = request.POST.get("end_pg3")
+        pg3_info = request.POST.get("pg3_info")
 
         Achievments = request.POST.get("Achievments")
         Skills = request.POST.get("Skills")
@@ -192,12 +205,13 @@ def update_resume(request, pk):
 
         user = request.user
 
-        new = Info(id=pk,user=user, profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
+        new = Info(id=pk, user=user, profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
                    email=email, dep=dep, roll=roll, github=github, linkedin=linkedin, portfolio=portfolio,
                    clg=clg, clg_cg=clg_cg, start_clg=start_clg, end_clg=end_clg, edu=edu, edu_cg=edu_cg, start_edu=start_edu,
                    end_edu=end_edu, exp1=exp1, start_exp1=start_exp1, end_exp1=end_exp1, exp2=exp2, start_exp2=start_exp2,
                    end_exp2=end_exp2, exp3=exp3, start_exp3=start_exp3, end_exp3=end_exp3, pj1=pj1,
                    start_pg1=start_pg1, end_pg1=end_pg1, pj2=pj2, start_pg2=start_pg2, end_pg2=end_pg2, pj3=pj3,
+                   pg3_info=pg3_info, pg2_info=pg2_info, pg1_info=pg1_info, exp1_info=exp1_info, exp2_info=exp2_info, exp3_info=exp3_info,
                    start_pg3=start_pg3, end_pg3=end_pg3, Achievments=Achievments, Skills=Skills, Por=Por, Hobbies=Hobbies)
         new.save()
         return redirect('resume')
