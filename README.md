@@ -34,6 +34,6 @@ $ python3 manage.py runserver
 ![image](https://github.com/DbDibyendu/Resume-Builder/blob/main/main/static/images/Architecture.png?raw=true)
 
 ### Authors
-Back End : [Me](https://github.com/DbDibyendu)              
-Front End : [Abhinil](https://github.com/abhinil07)
+- Project Idea and Back End : [Me](https://github.com/DbDibyendu)              
+- Front End : [Abhinil](https://github.com/abhinil07)
 
