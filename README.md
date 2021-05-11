@@ -27,6 +27,8 @@ $ python -m pip install Django
 Clone this repository 
 ```
 $ cd Resume-Builder
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
 $ python3 manage.py runserver
 ```
 ### Basic Architecture of the Project
