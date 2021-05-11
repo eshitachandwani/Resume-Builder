@@ -1,4 +1,6 @@
 # Resume-Builder
+![Resume](https://github.com/DbDibyendu/Resume-Builder/blob/main/main/static/images/Resume-Builder.png?raw=true)
+<img src="(https://github.com/DbDibyendu/Resume-Builder/blob/main/main/static/images/Resume-Builder.png?raw=true" width="48">
 Quick and Easy Official Resume Builder for your College. 
 
  
