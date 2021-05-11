@@ -21,10 +21,10 @@ What things you need to install the software and how to install them
           
 2 Install Django
 ```
-$ python -m pip install Django
+$ python3 -m pip install Django
 ```
 ##### Testing on local Server
-Clone this repository 
+Clone this repository onto your system
 ```
 $ cd Resume-Builder
 $ python3 manage.py makemigrations
