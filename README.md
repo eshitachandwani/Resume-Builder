@@ -33,6 +33,8 @@ $ python3 manage.py runserver
 
 ![image](https://github.com/DbDibyendu/Resume-Builder/blob/main/main/static/images/Architecture.png?raw=true)
 
+- Javascript has been used for converting html page to pdf, for saving the resume in pdf format
+
 ### Authors
 - Project Idea and Back End : [Me](https://github.com/DbDibyendu)              
 - Front End : [Abhinil](https://github.com/abhinil07)
