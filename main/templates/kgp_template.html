@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <title>Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static  'css/kgp.css'  %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script src="{%  static  '/js/pdf.js'  %}"></script>
+</head>
+
+<body>
+    <div id="w">
+        <header class="container">
+            <div>
+                <img src="{% static 'images/kgp.png' %}"> </div>
+            <div>{{resume.firstname}} {{resume.lastname}}<span> | </span>{{resume.roll}}<br>{{resume.dep}}</div>
+            <div>
+                <a href="{{resume.linkedin}} ">LinkedIn</a>
+                <br>
+                <a href="{{resume.github}} ">Github</a><br> Contact: {{resume.phone}}<br><a href="">{{resume.email}}</a>
+                <br>
+
+            </div>
+        </header>
+        <hr>
+        <main class="container">
+            <div class="maintitle">Project Undertaken</div>
+            <div class="title">Operation research</div>
+            <div class="date">12/01/2020 to 12/01/2020</div>
+            <div class="decsription ">descriptionorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+            <div class="title ">Operation research</div>
+            <div class="date">12/01/2020 to 12/01/2020</div>
+            <div class="decsription">descriptionorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+
+            <div class="maintitle">Project Undertaken 2</div>
+            <div class="title">Operation research</div>
+            <div class="date">12/01/2020 to 12/01/2020</div>
+            <div class="decsription">descriptionorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+            <div class="title">Operation research</div>
+            <div class="date">12/01/2020 to 12/01/2020</div>
+            <div class="decsription">descriptionorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        </main>
+
+    </div>
+</body>
+<button class="btn btn-primary" id="download">download pdf</button>
+
+</html>

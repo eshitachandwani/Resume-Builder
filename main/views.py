@@ -133,7 +133,7 @@ def create_resume(request):
                        start_pg1=start_pg1, end_pg1=end_pg1, pj2=pj2, start_pg2=start_pg2, end_pg2=end_pg2, pj3=pj3,
                        pg3_info=pg3_info, pg2_info=pg2_info, pg1_info=pg1_info, exp1_info=exp1_info, exp2_info=exp2_info, exp3_info=exp3_info,
                        start_pg3=start_pg3, end_pg3=end_pg3, Achievments=Achievments, Skills=Skills, Por=Por, Hobbies=Hobbies)
-            profile.save()
+            new.save()
             return redirect('resume')
         else:
             messages.info(request, 'Enter all the Important Details')
@@ -246,6 +246,12 @@ def choose_template(request, pk):
 
 @login_required(login_url='login')
 def view_template1(request, pk):
+    resume = Info.objects.get(id=pk)
+    context = {"resume": resume}
+    return render(request, 'kgp_template.html', context)
+
+@login_required(login_url='login')
+def view_template2(request, pk):
     resume = Info.objects.get(id=pk)
     context = {"resume": resume}
     return render(request, 'template1.html', context)

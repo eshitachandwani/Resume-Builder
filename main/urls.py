@@ -18,4 +18,5 @@ urlpatterns = [
          views.choose_template, name="choose_template"),
 
     path("view_template1/<str:pk>/", views.view_template1, name="view_template1"),
+     path("view_template2/<str:pk>/", views.view_template2, name="view_template2"),
 ]
