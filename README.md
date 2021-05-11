@@ -1,5 +1,6 @@
 
-<img src="https://github.com/DbDibyendu/Resume-Builder/blob/main/main/static/images/Resume-Builder.png?raw=true" width="100">
+<img src="https://github.com/DbDibyendu/Resume-Builder/blob/main/main/static/images/Resume-Builder.png?raw=true" width="150">
+
 # Resume-Builder
 
 Quick and Easy Official Resume Builder for your College. 
