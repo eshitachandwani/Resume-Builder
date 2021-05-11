@@ -125,7 +125,7 @@ def create_resume(request):
         user = request.user
 
         if profile_name != "" and firstname != "" and phone != "" and email != "":
-            new = Info(id=pk, user=user, profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
+            new = Info(user=user, profile_name=profile_name, firstname=firstname, lastname=lastname, phone=phone,
                        email=email, dep=dep, roll=roll, github=github, linkedin=linkedin, portfolio=portfolio,
                        clg=clg, clg_cg=clg_cg, start_clg=start_clg, end_clg=end_clg, edu=edu, edu_cg=edu_cg, start_edu=start_edu,
                        end_edu=end_edu, exp1=exp1, start_exp1=start_exp1, end_exp1=end_exp1, exp2=exp2, start_exp2=start_exp2,
