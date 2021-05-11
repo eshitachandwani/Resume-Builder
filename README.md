@@ -14,4 +14,4 @@ The project is made by me, to help students making their official college resume
 ### Usage
 ### Basic Architecture of the Project
 
-![image](https://grokonez.com/wp-content/uploads/2019/02/django-angular-6-django-rest-api-mysql-angular-server-architecture.png)
+![image](https://github.com/DbDibyendu/Resume-Builder/blob/main/main/static/images/Architecture.png?raw=true)
