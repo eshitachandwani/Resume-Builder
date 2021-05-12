@@ -39,5 +39,5 @@ $ python3 manage.py runserver
 
 ### Authors
 - Project Idea and Back End : [Me](https://github.com/DbDibyendu)              
-- Front End : [Abhinil](https://github.com/abhinil07)
+- Front End : [Abhinil](https://github.com/abhinil07) ,  [Eshita](https://github.com/eshitachandwani)
 
