@@ -1,0 +1,144 @@
+*{
+	box-sizing: border-box;
+}
+.navbar{
+	background-color: #721888FF;
+	height:100px;
+	position: absolute;
+	width: 100%;
+}
+.logo{
+	height:100px;
+	position: absolute;
+	border-radius: 4px;
+}
+.dashboard{
+	position: absolute;
+	left: 90px;
+	font-size: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	color: white;
+	height: 40px;
+	width: 140px;
+	font-family: 'Source Sans Pro', sans-serif;
+	border-width:  0.0001px;;
+	border-color: white;
+	border-radius: 2px;
+	border:transparent;
+	padding: 10px;
+}
+
+a.click{
+	color: white;
+	text-decoration: none;
+	border-width:  0.0001px;;
+	border-color: white;
+	border-radius: 2px;
+	border:transparent;
+	padding: 10px;
+}
+	
+a.click:link,a.click:visited{
+	color: white;
+	text-decoration: none;
+		border-width:  0.0001px;;
+	border-color: white;
+	border-radius: 2px;
+	border:transparent;
+	padding: 10px;
+}
+
+a.click:hover{
+
+	opacity: 0.7;
+	padding: 10px;
+}
+h1{
+	color:white;
+	position: absolute;
+	left: 525px;
+	top:25px;
+	font-family: 'Caveat', cursive;
+}
+
+.logout{
+	transition: box-shadow .3s;
+	position: absolute;
+	right:10px;
+	font-family: 'Source Sans Pro', sans-serif;
+	background-color: white;
+	color: #721888FF;
+	top: 25px;
+	bottom: auto;
+	border-radius: 3px;
+	padding: 10px 20px 10px 20px;
+	font-size: 15px;
+	font-weight: bold;
+}
+a.log{
+	color: #721888FF;
+	text-decoration: none;
+}
+.logout:hover {
+  background-color: #DDDDDDFF;
+ }
+ main{
+ 	position: absolute;
+ 	top:100px;
+ 	width: 100%;
+ 	height: 100%;
+ }
+ h2{
+ 	padding-top: 10px;
+ 	padding-left: 10px;
+ 	font-size: 55px;
+ 	font-family: 'Cookie', cursive;
+ 	/*font-weight: bold;*/}
+
+ .hello{
+ 	width: 100%;
+ 	text-align: center;
+ }
+ 
+ #login-box {
+  position: absolute;
+/*  margin: 5% auto;*/
+  margin-left: 180px;
+  margin-right: 50px;
+  width: 1200px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(1, 1, 1, 1);
+}
+.button{
+	width:100%;
+	height: 40px;
+	background-color: #721888AA;
+	color: white;
+	font-size: 25px;
+	padding-bottom: 10px;
+}
+a.butto{
+	/*background-color: #721888AA;
+	width: 1200px;*/
+	color: white;
+	font-size: 25px;
+	text-decoration: none;
+
+}
+.row{
+	--bs-gutter-x:0;
+}
+.container{
+	padding-left: 0;
+	padding-right: 0;
+}
+.name{
+	padding-left: 10px;
+	font-size: 20px;
+}
+.update{
+	background-color: #FFFF15FF;
+}
